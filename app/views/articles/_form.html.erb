@@ -1,6 +1,4 @@
-<h1>New Article</h1>
-
-<%= form_with model: @article do |form| %>
+<%= form_with model: article do |form| %>
     <div>
         <%= form.label :title %><br>
         <%= form.text_field :title %>
@@ -8,6 +6,7 @@
             <div><%= message %></div>
         <% end %>
     </div>
+
 
     <div>
         <%= form.label :body %><br>
@@ -17,7 +16,11 @@
         <% end %>
     </div>
 
-    
+    <div>
+        <%= form.label :status %><br>
+        <%= form.select :status, ['public', 'private', 'archived'], selected: 'public'%>
+
+
     <div>
         <%= form.submit %>
     </div>
